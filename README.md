@@ -13,8 +13,8 @@ The game uses Node 12.6.0 npm 6.9.0.
 
 To compile:
 
-    npm install
-    npm build
+    pnpm install
+    pnpm build
 
 A `dist` folder will be created, containing a compiled version of the game that can be run in the browser (from a web server)
 
@@ -22,8 +22,8 @@ A `dist` folder will be created, containing a compiled version of the game that 
 
 Run:
 
-    npm dev
+    pnpm dev
 
-`npm start` is an alternative shorthand.
+`pnpm start` is an alternative shorthand.
 
 Then open a browser and navigate to [localhost:1234](localhost:1234).
