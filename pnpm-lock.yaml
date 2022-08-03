@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@parcel/config-default': 2.4.1
@@ -24,8 +24,8 @@ devDependencies:
   '@parcel/config-default': 2.4.1_@parcel+core@2.4.1
   '@parcel/core': 2.4.1
   '@parcel/packager-ts': 2.4.1_@parcel+core@2.4.1
-  '@parcel/transformer-typescript-types': 2.4.1_4b705412622b7f8544e28842591c5173
-  '@parcel/validator-typescript': 2.4.1_4b705412622b7f8544e28842591c5173
+  '@parcel/transformer-typescript-types': 2.4.1_jnyfietcfn7ykrhcrbbfshcrom
+  '@parcel/validator-typescript': 2.4.1_jnyfietcfn7ykrhcrbbfshcrom
   '@types/jest': 27.4.1
   eslint: 8.12.0
   eslint-config-prettier: 8.5.0_eslint@8.12.0
@@ -33,7 +33,7 @@ devDependencies:
   jest: 27.5.1
   parcel: 2.4.1
   prettier: 2.6.2
-  ts-jest: 27.1.4_9985e1834e803358b7be1e6ce5ca0eea
+  ts-jest: 27.1.4_tgc6da2oqazvrn56dzwolsqo5i
   typescript: 4.6.3
 
 packages:
@@ -200,6 +200,8 @@ packages:
     resolution: {integrity: sha512-vqUSBLP8dQHFPdPi9bc5GK9vRkYHJ49fsZdtoJ8EQ8ibpwk5rPKfvNIwChB0KVXcIjcepEBBd2VHC5r9Gy8ueg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.17.0
     dev: true
 
   /@babel/plugin-syntax-async-generators/7.8.4_@babel+core@7.17.9:
@@ -1229,18 +1231,22 @@ packages:
   /@parcel/transformer-image/2.4.1_@parcel+core@2.4.1:
     resolution: {integrity: sha512-pOfgPVe13lMTKdzydjXXNl4bojVMmuQmwm44OZ9cmpwOD3phkZzCtrxgySoV1eRBCOipdQg1O6GGI3za1KNdvw==}
     engines: {node: '>= 12.0.0', parcel: ^2.4.1}
+    peerDependencies:
+      '@parcel/core': '*'
     dependencies:
+      '@parcel/core': 2.4.1
       '@parcel/plugin': 2.4.1_@parcel+core@2.4.1
       '@parcel/workers': 2.4.1_@parcel+core@2.4.1
       nullthrows: 1.1.1
-    transitivePeerDependencies:
-      - '@parcel/core'
     dev: true
 
   /@parcel/transformer-js/2.4.1_@parcel+core@2.4.1:
     resolution: {integrity: sha512-39Y9RUuDk5dc09Z3Pgj8snQd5E8926IqOowdTLKNJr7EcmkwHdinbpI4EqgKnisOwX4NSzxUti1I2DHsP1QZHw==}
     engines: {node: '>= 12.0.0', parcel: ^2.4.1}
+    peerDependencies:
+      '@parcel/core': '*'
     dependencies:
+      '@parcel/core': 2.4.1
       '@parcel/diagnostic': 2.4.1
       '@parcel/plugin': 2.4.1_@parcel+core@2.4.1
       '@parcel/source-map': 2.0.2
@@ -1252,8 +1258,6 @@ packages:
       nullthrows: 1.1.1
       regenerator-runtime: 0.13.9
       semver: 5.7.1
-    transitivePeerDependencies:
-      - '@parcel/core'
     dev: true
 
   /@parcel/transformer-json/2.4.1_@parcel+core@2.4.1:
@@ -1333,7 +1337,7 @@ packages:
       - '@parcel/core'
     dev: true
 
-  /@parcel/transformer-typescript-types/2.4.1_4b705412622b7f8544e28842591c5173:
+  /@parcel/transformer-typescript-types/2.4.1_jnyfietcfn7ykrhcrbbfshcrom:
     resolution: {integrity: sha512-SAhjHNh8hRV17zlEyU+Lg8GD+7TZL7FyqUp5EJOV6GXINV2PdN9uOdKPMMBJfgV76J6BYQszG3J6FAAMvfftOQ==}
     engines: {node: '>= 12.0.0', parcel: ^2.4.1}
     peerDependencies:
@@ -1398,7 +1402,7 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@parcel/validator-typescript/2.4.1_4b705412622b7f8544e28842591c5173:
+  /@parcel/validator-typescript/2.4.1_jnyfietcfn7ykrhcrbbfshcrom:
     resolution: {integrity: sha512-g8zuBbJ8DBgiyxOFWITsdAVViBlumMW5xE9gX3Sg6rcuSFLoyP9jmvGtbL7MCnAPU4/TagoBbz3zKn/mxFH2Uw==}
     engines: {node: '>= 12.0.0', parcel: ^2.4.1}
     peerDependencies:
@@ -1782,6 +1786,8 @@ packages:
       qs: 6.9.7
       raw-body: 2.4.3
       type-is: 1.6.18
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /boolbase/1.0.0:
@@ -2073,6 +2079,11 @@ packages:
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
     dependencies:
       ms: 2.0.0
     dev: true
@@ -2471,6 +2482,8 @@ packages:
       type-is: 1.6.18
       utils-merge: 1.0.1
       vary: 1.1.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /fast-deep-equal/3.1.3:
@@ -2533,6 +2546,8 @@ packages:
       parseurl: 1.3.3
       statuses: 1.5.0
       unpipe: 1.0.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /find-up/4.1.0:
@@ -2569,6 +2584,8 @@ packages:
       markdown-it: 12.3.2
       ts-morph: 11.0.3
       yargs: 17.4.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /form-data/3.0.1:
@@ -3900,6 +3917,9 @@ packages:
     resolution: {integrity: sha512-H8n7cJ0rOt0AZZLuPuG6hvujUWiWz8kxx4pkqEDm31dijrbKb0pNgccXOllQ34em6r7elv6yH7lxox8jDCp0hw==}
     engines: {node: '>= 12.0.0'}
     hasBin: true
+    peerDependenciesMeta:
+      '@parcel/core':
+        optional: true
     dependencies:
       '@parcel/config-default': 2.4.1_@parcel+core@2.4.1
       '@parcel/core': 2.4.1
@@ -4242,6 +4262,8 @@ packages:
       on-finished: 2.3.0
       range-parser: 1.2.1
       statuses: 1.5.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /serve-static/1.14.2:
@@ -4252,6 +4274,8 @@ packages:
       escape-html: 1.0.3
       parseurl: 1.3.3
       send: 0.17.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /setprototypeof/1.2.0:
@@ -4498,7 +4522,7 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /ts-jest/27.1.4_9985e1834e803358b7be1e6ce5ca0eea:
+  /ts-jest/27.1.4_tgc6da2oqazvrn56dzwolsqo5i:
     resolution: {integrity: sha512-qjkZlVPWVctAezwsOD1OPzbZ+k7zA5z3oxII4dGdZo5ggX/PL7kvwTM0pXTr10fAtbiVpJaL3bWd502zAhpgSQ==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     hasBin: true
